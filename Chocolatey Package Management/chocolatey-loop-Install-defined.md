@@ -1,6 +1,10 @@
-$Packages = 'googlechrome', 'git', 'notepadplusplus', 'sql-server-management-studio'
+# Chocolatey Package Installation Script
 
-ForEach ($PackageName in $Packages)
-{
-    choco install $PackageName -y
-}
+This script installs a list of predefined software packages using Chocolatey.  
+**Prerequisites:**  
+    try {
+        choco install $PackageName -y
+    } catch {
+        Write-Host "Failed to install $PackageName. Error: $_"
+    }
+- Run this script in a PowerShell session with administrative privileges.
